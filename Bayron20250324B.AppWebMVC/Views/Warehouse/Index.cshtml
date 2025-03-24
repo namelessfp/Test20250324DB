@@ -30,11 +30,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+                <td>
+                    <form method="get" asp-action="Edit" asp-route-id="@item.Id" style="display:inline;">
+                        <button type="submit" class="btn btn-secondary">Edit</button>
+                    </form>
+                    |
+                    <form method="get" asp-action="Details" asp-route-id="@item.Id" style="display:inline;">
+                        <button type="submit" class="btn btn-info">Details</button>
+                    </form>
+                    |
+                    <form method="get" asp-action="Delete" asp-route-id="@item.Id" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
         </tr>
 }
     </tbody>
