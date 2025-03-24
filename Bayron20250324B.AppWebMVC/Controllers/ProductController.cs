@@ -48,8 +48,8 @@ namespace Bayron20250324B.AppWebMVC.Controllers
         // GET: Product/Create
         public IActionResult Create()
         {
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id");
-            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Id");
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name");
+            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Name");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace Bayron20250324B.AppWebMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
-            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Id", product.WarehouseId);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", product.BrandId);
+            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Name", product.WarehouseId);
             return View(product);
         }
 
@@ -84,8 +84,8 @@ namespace Bayron20250324B.AppWebMVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
-            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Id", product.WarehouseId);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", product.BrandId);
+            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Name", product.WarehouseId);
             return View(product);
         }
 
@@ -121,8 +121,8 @@ namespace Bayron20250324B.AppWebMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
-            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Id", product.WarehouseId);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", product.BrandId);
+            ViewData["WarehouseId"] = new SelectList(_context.Warehouses, "Id", "Name", product.WarehouseId);
             return View(product);
         }
 

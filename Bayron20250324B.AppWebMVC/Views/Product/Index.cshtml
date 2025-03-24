@@ -55,10 +55,10 @@
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Brand.Id)
+                @Html.DisplayFor(modelItem => item.Brand.BrandName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Warehouse.Id)
+                @Html.DisplayFor(modelItem => item.Warehouse.WarehouseName)
             </td>
                 <td>
                     <form method="get" asp-action="Edit" asp-route-id="@item.Id" style="display:inline;">
